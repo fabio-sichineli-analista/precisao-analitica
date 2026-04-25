@@ -207,20 +207,24 @@ Fábio Sichineli
 
 </div>
 
-    <script>
+   <script>
 const reveals = document.querySelectorAll('.reveal');
 
-window.addEventListener('scroll', () => {
-    reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
+const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach((el, index) => {
         const elementTop = el.getBoundingClientRect().top;
 
         if (elementTop < windowHeight - 100) {
-            el.style.opacity = 1;
-            el.style.transform = 'translateY(0)';
+            setTimeout(() => {
+                el.style.opacity = 1;
+                el.style.transform = 'translateY(0)';
+            }, index * 80); // controla o ritmo aqui
         }
     });
-});
+};
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 </script>
-</body>
-</html>
