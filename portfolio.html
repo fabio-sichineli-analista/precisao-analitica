@@ -7,7 +7,11 @@
 <title>Portfólio — Instituto PRECISÃO</title>
 
 <style>
-
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
 body {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
@@ -60,14 +64,14 @@ p {
 
 <div class="container">
 
-<h1>PRECISÃO ANALÍTICA</h1>
+<h1 class="reveal">PRECISÃO ANALÍTICA</h1>
 
-<p style="font-size:22px;">
+<p class="reveal"style="font-size:22px;">
 Decidir não é escolher.<br>
 É sustentar a estrutura que torna a decisão possível.
 </p>
 
-<p>
+<p class="reveal">
 O Instituto PRECISÃO atua na base estrutural da decisão.<br>
 Não na escolha em si,<br>
 mas na forma como a realidade é compreendida antes dela.
@@ -75,25 +79,25 @@ mas na forma como a realidade é compreendida antes dela.
 
 <div class="divider"></div>
 
-<p>
+<p class="reveal">
 Decisões complexas não falham apenas por falta de informação.
 Falham por ausência de estrutura.
 </p>
 
-<p>
+<p class="reveal">
 É nesse espaço — anterior à decisão — que o Instituto atua.
 </p>
 
 <div class="divider"></div>
 
-<h2>Atuação</h2>
+<h2 class="reveal">Atuação</h2>
 
-<p>
+<p class="reveal">
 A atuação do Instituto não se organiza por serviços isolados,<br>
 mas por campos de aplicação do pensamento analítico.
 </p>
 
-<p>
+<p class="reveal">
 Em contextos onde há ambiguidade, múltiplas interpretações<br>
 e ausência de clareza estrutural,<br>
 o trabalho consiste em separar, organizar e tornar inteligível o que antes se apresenta de forma dispersa.
@@ -101,14 +105,14 @@ o trabalho consiste em separar, organizar e tornar inteligível o que antes se a
 
 <div class="divider"></div>
 
-<h2>Análise</h2>
+<h2 class="reveal">Análise</h2>
 
-<p>
+<p class="reveal">
 A análise não busca responder imediatamente,<br>
 mas compreender com precisão.
 </p>
 
-<p>
+<p class="reveal">
 Situações são estruturadas a partir de evidências,<br>
 contexto e interpretação,<br>
 até que se torne possível sustentar uma leitura consistente da realidade.
@@ -116,49 +120,49 @@ até que se torne possível sustentar uma leitura consistente da realidade.
 
 <div class="divider"></div>
 
-<h2>Formação</h2>
+<h2 class="reveal">Formação</h2>
 
-<p>
+<p class="reveal">
 A formação analítica não se limita à transmissão de conteúdo.<br>
 Consiste no desenvolvimento da capacidade de estruturar o pensamento.
 </p>
 
-<p>
+<p class="reveal">
 O foco não está em oferecer respostas,<br>
 mas em formar a base que permite construí-las com consistência.
 </p>
 
 <div class="divider"></div>
 
-<h2>Produção Intelectual</h2>
+<h2 class="reveal">Produção Intelectual</h2>
 
-<p>
+<p class="reveal">
 A produção intelectual do Instituto organiza e aprofunda os fundamentos do pensamento analítico aplicado.
 </p>
 
-<p>
+<p class="reveal">
 Não se trata de produzir conteúdo em volume,<br>
 mas de desenvolver estruturas conceituais que sustentem a compreensão.
 </p>
 
 <div class="divider"></div>
 
-<h2>Sistema Analítico</h2>
+<h2 class="reveal">Sistema Analítico</h2>
 
-<p>
+<p class="reveal">
 O desenvolvimento de sistemas analíticos busca traduzir o método em ambiente estruturado.
 </p>
 
-<p>
+<p class="reveal">
 Não para automatizar a decisão,<br>
 mas para apoiar o processo que a antecede.
 </p>
 
 <div class="divider"></div>
 
-<h2>Acompanhamento</h2>
+<h2 class="reveal">Acompanhamento</h2>
 
-<p>
+<p class="reveal">
 Em contextos onde a decisão não é pontual,<br>
 mas contínua,<br>
 o acompanhamento analítico permite sustentar a consistência ao longo do tempo.
@@ -166,15 +170,15 @@ o acompanhamento analítico permite sustentar a consistência ao longo do tempo.
 
 <div class="divider"></div>
 
-<h2>Limite</h2>
+<h2 class="reveal">Limite</h2>
 
-<p>
+<p class="reveal">
 O Instituto não decide por terceiros.<br>
 Não executa ações.<br>
 Não substitui o decisor.
 </p>
 
-<p>
+<p class="reveal">
 A decisão permanece humana.<br>
 E, justamente por isso,<br>
 exige estrutura.
@@ -182,7 +186,7 @@ exige estrutura.
 
 <div class="divider"></div>
 
-<p style="color:#d4af37;">
+<p class="reveal" style="color:#d4af37;">
 Decidir melhor não é opinião.<br>
 É estrutura.
 </p>
@@ -197,5 +201,20 @@ Fábio Sichineli
 
 </div>
 
+    <script>
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+    reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            el.style.opacity = 1;
+            el.style.transform = 'translateY(0)';
+        }
+    });
+});
+</script>
 </body>
 </html>
